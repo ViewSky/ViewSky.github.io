@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Jacman Theme</title>
+    <title>Table | Jacman Theme</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="WuChong">
     
-    <meta name="description" content="Jacman主题演示网站">
+    <meta name="description" itemprop="description" content="This a test post for tables。这是用来测试表格功能的文章。">
     
     
-    <meta name="description" content="Jacman主题演示网站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jacman Theme">
-<meta property="og:url" content="http://wuchong.me/jacman/jacman/">
+    <meta name="description" content="This a test post for tables。这是用来测试表格功能的文章。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Table">
+<meta property="og:url" content="http://wuchong.me/jacman/jacman/table/">
 <meta property="og:site_name" content="Jacman Theme">
-<meta property="og:description" content="Jacman主题演示网站">
+<meta property="og:description" content="This a test post for tables。这是用来测试表格功能的文章。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jacman Theme">
-<meta name="twitter:description" content="Jacman主题演示网站">
+<meta name="twitter:title" content="Table">
+<meta name="twitter:description" content="This a test post for tables。这是用来测试表格功能的文章。">
 <meta name="twitter:creator" content="@jarkwu">
 <link rel="publisher" href="111190881341800841449">
 
@@ -76,174 +76,181 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/jacman/how-to-use-jacman/" title="如何使用 Jacman 主题" itemprop="url">
-  
-    <h1 itemprop="name">如何使用 Jacman 主题</h1>
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-      <p itemprop="description" >Jacman 是一款扁平化，有着响应式设计的 Hexo 主题。本站正式使用了 Jacman 主题。Jacman 基于 Pacman 主题修改而来，而今已有很多特性与原主题不同。你可以前往本站和 Demo 预览更多关于本主题的更多效果。如果你有任何问题或意见欢迎到 GitHub 发表 issue。</p>
-      
+      <a href="/jacman/table/" title="Table" itemprop="url">Table</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/111190881341800841449?rel=author" title="WuChong" target="_blank" itemprop="author">WuChong</a>
+		
+  <p class="article-time">
+    <time datetime="2014-11-18T09:02:24.000Z" itemprop="datePublished"> 发表于 2014-11-18</time>
     
-    <time datetime="2014-11-20T01:58:17.000Z" itemprop="datePublished">2014-11-20</time>
-  </a>
-</section>
-
-
-
-
-
-
+  </p>
+</header>
+	<div class="article-content">
+		
+		<p>This a test post for tables.</p>
+<p>测试表格功能。</p>
+<h2 id="绘制表格">绘制表格</h2>
+<p>markdown 提供了简单的语法来绘制表格。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:right">价格</th>
+<th style="text-align:center">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算机</td>
+<td style="text-align:right">$1600</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td style="text-align:right">$12</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">$1</td>
+<td style="text-align:center">234</td>
+</tr>
+</tbody>
+</table>
+<p><a id="more"></a></p>
+<h2 id="Tables">Tables</h2>
+<p>You can specify column alignment with one or two colons:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Item</th>
+<th style="text-align:right">Value</th>
+<th style="text-align:center">Qty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Computer</td>
+<td style="text-align:right">$1600</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:left">Phone</td>
+<td style="text-align:right">$12</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:left">Pipe</td>
+<td style="text-align:right">$1</td>
+<td style="text-align:center">234</td>
+</tr>
+</tbody>
+</table>
+<h2 id="SmartyPants">SmartyPants</h2>
+<p>SmartyPants converts ASCII punctuation characters into “smart” typographic punctuation HTML entities. For example:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>ASCII</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Single backticks</td>
+<td><code>&#39;Isn&#39;t this fun?&#39;</code></td>
+<td>‘Isn’t this fun?’</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Quotes</td>
+<td><code>&quot;Isn&#39;t this fun?&quot;</code></td>
+<td>“Isn’t this fun?”</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dashes</td>
+<td><code>-- is en-dash, --- is em-dash</code></td>
+<td>— is en-dash, —- is em-dash</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>That’s all!</p>
   
-<section class="post" itemscope itemprop="blogitem">
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/jacman/categories/Table/">Table</a>
+</div>
+
+
+  <div class="article-tags">
   
-    <a href="/jacman/table/" title="Table" itemprop="url">
-  
-    <h1 itemprop="name">Table</h1>
-    
-     
-      <p itemprop="description" >This a test post for tables。这是用来测试表格功能的文章。</p>
-      
-    
-    <time datetime="2014-11-18T09:02:24.000Z" itemprop="datePublished">2014-11-18</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/jacman/gallery/" title="Gallery" itemprop="url">
-  
-    <h1 itemprop="name">Gallery</h1>
-    
-     
-      <p itemprop="description" >Gallery Post Test. 测试图片类文章的显示。</p>
-      
-    
-    <time datetime="2014-11-18T07:45:20.000Z" itemprop="datePublished">2014-11-18</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/jacman/code/" title="Code" itemprop="url">
-  
-    <h1 itemprop="name">Code</h1>
-    
-     
-      <p itemprop="description" >Code Test. 测试代码显示。</p>
-      
-    
-    <time datetime="2014-01-08T02:58:17.000Z" itemprop="datePublished">2014-01-08</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/jacman/traditional-chinese/" title="繁體中文測試" itemprop="url">
-  
-    <h1 itemprop="name">繁體中文測試</h1>
-    
-     
-      <p itemprop="description" >The purpose of this post is to help you make sure all of HTML elements can display properly. If you use CSS reset, don’t forget to redefine the style by yourself. 演示所有的HTML元素在本主题下的显示效果。</p>
-      
-    
-    <time datetime="2013-11-23T09:21:18.000Z" itemprop="datePublished">2013-11-23</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/jacman/elements/" title="Elements" itemprop="url">
-  
-    <h1 itemprop="name">Elements</h1>
-    
-     
-      <p itemprop="description" >The purpose of this post is to help you make sure all of HTML elements can display properly. If you use CSS reset, don’t forget to redefine the style by yourself. 演示所有的HTML元素在本主题下的显示效果。</p>
-      
-    
-    <time datetime="2013-11-23T09:21:18.000Z" itemprop="datePublished">2013-11-23</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/jacman/no-title/" title="" itemprop="url">
-  
-    <h1 itemprop="name"></h1>
-    
-     
-      <p itemprop="description" >This post doesn’t have a title. Make sure it’s accessible. 测试没有标题的文章。</p>
-      
-    
-    <time datetime="2013-05-08T02:58:17.000Z" itemprop="datePublished">2013-05-08</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-   
-    <a href="http://www.google.com" target="_blank"> 
-  
-    <h1 itemprop="name">Link</h1>
-    
-     
-      <p itemprop="description" >This is a link post. Clicking on the link should open Google in a new tab or window. 这是一篇链接类文章，点击该文章应该会弹出链接页面。</p>
-      
-    
-    <time datetime="2012-10-23T09:21:18.000Z" itemprop="datePublished">2012-10-23</time>
-  </a>
-</section>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix unexpand">
-    <span class="page-number current">1</span><a class="page-number" href="/jacman/page/2/">2</a><a class="extend next" rel="next" href="/jacman/page/2/">Next<span></span></a>
-  </nav>
+  <span></span> <a href="/jacman/tags/table/">table</a>
+  </div>
 
 </div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://wuchong.me/jacman/table/" data-title="Table | Jacman Theme" data-tsina="2176287895" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/jacman/how-to-use-jacman/" title="如何使用 Jacman 主题">
+  <strong>上一篇：</strong><br/>
+  <span>
+  如何使用 Jacman 主题</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/jacman/gallery/"  title="Gallery">
+ <strong>下一篇：</strong><br/> 
+ <span>Gallery
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="table/" data-title="Table" data-url="http://wuchong.me/jacman/table/"></div>
+</section>
+
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
 <div id="asidepart">
@@ -437,6 +444,67 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
 
@@ -457,6 +525,27 @@ $(document).ready(function(){
 
 
 
+
+<link rel="stylesheet" href="/jacman/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/jacman/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
 
 
 
@@ -493,4 +582,4 @@ ga('send', 'pageview');
 <!-- MathJax End -->
 
   </body>
- </html>
+</html>
