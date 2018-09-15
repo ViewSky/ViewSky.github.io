@@ -27,7 +27,7 @@
   <li>MA.Sc in Electronics Engineering</li>
 </ul>
 
-<h3 id="bachelor"><strong>University of Science and Technology of China</strong> <code class="highlighter-rouge">Sep.2009~Jun.2013</code></h3>
+<h3 id="bachelor"><strong>University of Science and Technology of China</strong> <code class="highlighter-rouge">Sep.2009 ~ Jun.2013</code></h3>
 <ul>
   <li>B.S. in Applid Physics, <em>Physics Electronics</em></li>
   <li>Special Class of the Gifted Young</li>
@@ -36,11 +36,30 @@
 <h2 id="experience">Experience</h2>
 
 <h3 id="intel"><strong>Intel Corporation, Zizhu site in Shanghai  </strong>  <code class="highlighter-rouge">Jun.2016 ~ Apr.2018</code></h3>
-<p>Software Engineer in Deep Learning<br>
-<a href="#" class="myitem"> </a> <strong>ResNet-18 SSD fast implementation, City Brain Project</strong> <br>
-    As Intel CPU has its high throughput advantage to handle object detection tasks with enough memory, the new SSD model based on ResNet-18 was proposed and implemented.</p> 
-<!--Co-advised by <a href="https://www.cs.cmu.edu/~./aldrich/">Jonathan Aldrich</a>--> 
+<p>Software Engineer in Deep Learning <br><br>
+<a href="#" class="myitem"> </a>  <strong>ResNet-18 SSD fast implementation, City Brain Project</strong> <br>
+    As Intel CPU has its high throughput advantage to handle object detection tasks with supporting of enough memory, the new SSD（Single Shot MultiBox Detector) model based on ResNet-18 was proposed and implemented. <br>To maximum the CPU performance of new model, I <em>modified</em> the original ResNet-18 to fully-reduced network with 1X1 convolution layers. <br> I <em>retrained</em> it and <em>accelerated</em> the training process with <a href="https://software.intel.com/en-us/mkl" target="_blank" rel="noopener">Intel®MKL</a> on <a href="https://ark.intel.com/en/products/91317/Intel-Xeon-Processor-E5-2699-v4-55M-Cache-2_20-GHz" target="_blank" rel="noopener">Xeon®E5-2699 v4</a> to outperform the original accuracy based on <a href="www.image-net.org">Image1K</a> dataset.<br>I <em>replaced</em> the VGG-16 in original SSD with the fully-reduced ResNet-18 in different methods. For the purpose of improving detection accuracy, I tried several ResNet-18 SSD models and <em>finetuned</em> models with special skills. The final mAP achieved 66.2% compared to <a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">YOLO V2(76.8%)</a>, <a href="https://github.com/weiliu89/caffe/tree/ssd" target="_blank" rel="noopener">SSD(77.2%)</a>.
+    <br>Then We rewrote forward operations of the new ResNet-18 SSD model with C and improved the performance with the<a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/" target="_blank" rel="noopener"> Intel Intrinsics</a> on Xeon®E5-2699 v4.<br><br>
 
+    <a href="#" class="myitem"> </a>  <strong>BLSTM Optimization, cooperated with Tencent</strong> <br>
+    We rewrote all matrix operations with Intel Intrinsics in the unique BLSTM model supplied by Tencent as Tencent had high latency of speech recognition in the game system. To achieve better performance, we converted float32 to int16 and narrowed down the loss of final accuracy with generalization.<br><br>
+   
+   <a href="#" class="myitem"> </a>  <strong>Lung abnormal classification, Huiying Project</strong> <br>
+    Huiying corporation had collected many origin medical images of lung X-Ray from hospitals in China. The size of whole primary dataset was 100TB and the format of original images is <a href="https://www.dicomstandard.org/" target="_blank" rel="noopener">dicom</a>. I wrote several scripts to convert the dicom format into jpeg and cleaned wrong images in the medical dataset. I labeled all lung images and made two lmdb datasets in order to train and validate models. Finetuned ResNet-12, ResNet-15, ResNet-18 and ResNet-23 with pretrained models based on Image1K and improved the AUC of test dataset to <strong>0.88</strong>.<br><br>
+
+  <a href="#" class="myitem"> </a>  <strong>Multinode implementation on theano</strong> <br>
+    We mainly contributed to improve theano performance on CPU, especially in Intel®Xeon® and  Intel®Xeon Phi™.
+    <a href="https://github.com/intel/theano/" target="_blank" rel="noopener">Intel Theano</a> was supported by our group and had exordinary <a href="https://github.com/Theano/Theano/issues/5580" target="_blank" rel="noopener">speed up</a> compared to original version. <br>
+    Personally, I focused on big batch training and multinode implementation on theano. Proposed multinode computing model of AlexNet which could accelerate about 7X(8 nodes) on Xeon®E5-2699 v4. All operations required by mutltinode computing were extended with C code and the waiting time of communication and synchronization was overlapped by map-reduce tricks of MPI.<br> I tuned big batch size(1024) of AlexNet, as big batch is required to get better efficiency of multinode acceleration. The new hyper-parameters could outperform the same top1&amp;top5 accuracy and greatly shorten time to train.<br>
+    <br>    
+  </p> 
+<!--Co-advised by <a href="https://www.cs.cmu.edu/~./aldrich/">Jonathan Aldrich</a>--> 
+<h3 id="intel"><strong>State Key Laboratory of Particle Detection and Electronics  </strong>  <code class="highlighter-rouge">Sep.2013 ~ Jun.2016</code></h3>
+<p>USTC, Hefei<br>
+<a href="#" class="myitem"> </a>  <strong>ResNet-18 SSD fast implementation, City Brain Project</strong> <br>
+    As Intel CPU has its high throughput advantage to handle object detection tasks with supporting of enough memory, the new SSD（Single Shot MultiBox Detector) model based on ResNet-18 was proposed and implemented. <br>To maximum the CPU performance of new model, I <em>modified</em> the original ResNet-18 to fully-reduced network with 1X1 convolution layers. <br> I <em>retrained</em> it and <em>accelerated</em> the training process with <a href="https://software.intel.com/en-us/mkl" target="_blank" rel="noopener">Intel®MKL</a> on <a href="https://ark.intel.com/en/products/91317/Intel-Xeon-Processor-E5-2699-v4-55M-Cache-2_20-GHz" target="_blank" rel="noopener">Xeon®E5-2699 v4</a> to outperform the original accuracy based on <a href="www.image-net.org">Image1K</a> dataset.<br>I <em>replaced</em> the VGG-16 in original SSD with the fully-reduced ResNet-18 in different methods. For the purpose of improving detection accuracy, I tried several ResNet-18 SSD models and <em>finetuned</em> models with special skills. The final mAP achieved 66.2% compared to <a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">YOLO V2(76.8%)</a>, <a href="https://github.com/weiliu89/caffe/tree/ssd" target="_blank" rel="noopener">SSD(77.2%)</a>.
+    <br>Then We rewrote forward operations of the new ResNet-18 SSD model with C and improved the performance with the<a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/" target="_blank" rel="noopener"> Intel Intrinsics</a> on Xeon®E5-2699 v4.<br><br>   
+  </p> 
  
 
 
