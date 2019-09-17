@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Curriculum Vitae</title>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+ <![endif]-->
+</head>
+<body>
+  <div id="cv">
+    <div id="content">   
+<h1 id="sky">
+<i href="#" class="myemail">个人主页</i>
+<a href="https://viewsky.github.io" style="margin-right:0.5em" target="_blank" rel="noopener">viewsky.github.io</a>
+<i href="#" class="myemail">邮箱</i>
+<a href="gxtzhuxi@gmail.com" style="margin-right:0.5em">skymustworkhard@gmail.com</a>
+<i href="#" class="myemail">Ver</i>
+<a href="./cv.html" style="margin-right:-0.1em">EN</a>
+<a href="#">中</a>
+
+
+</h1>
+<h2 id="education"></h2>
+
+<h1 id="sky"><strong>郭晓天 -- 简历 </strong></h1>
+<h2 id="education">教育</h2>
+
+<h3 id="Master"><strong>中国科学技术大学, 核探测与核电子学国家重点实验室 </strong> <code>2013.9 ~ 2016.6</code></h3>
+<ul>
+  <li>电子工程学硕士</li>
+</ul>
+
+<h3 id="bachelor"><strong>中国科学技术大学</strong> <code>2009.9 ~ 2013.6</code></h3>
+<ul>
+  <li>应用物理专业, <em>物理电子学</em></li>
+  <li>09届少年班</li>
+</ul>
+
+
+<h2 id="experience">项目经历</h2>
+<h3 id="intel"><strong>英特尔(中国)上海亚太研发有限公司  </strong>  <code>2016.6 ~ 2018.4</code></h3>
+<p>深度学习算法工程师 <br></p>
+<h3><a href="#" class="myitem"></a><strong>ResNet-18 SSD 设计与训练, City Brain Project</strong> <code>2017.4 ~ 2018.4</code></h3>
+    <ul>
+    <li> 为提高在Intel CPU平台吞吐性能，提出基于ResNet-18 网络的 SSD（Single Shot MultiBox Detector) 模型设计 </li>
+    <li> 修改原始 ResNet-18 网络为 fully-reduced 全卷积网络 </li>
+    <li> 基于<a href="https://www.image-net.org" target="_blank" rel="noopener">Image1K</a> 数据集重新<em>训练</em> ResNet-18 网络，并在 <a href="https://ark.intel.com/en/products/91317/Intel-Xeon-Processor-E5-2699-v4-55M-Cache-2_20-GHz" target="_blank" rel="noopener">Xeon®E5-2699 v4</a> 平台使用<a href="https://software.intel.com/en-us/mkl" target="_blank" rel="noopener">Intel®MKL</a> <em>加速</em>  收敛重现TOP-1 精度 </li>
+    <li>  替换SSD原始基础网络 VGG-16 为新 ResNet-18 特征提取，训练比较不同拓扑 ResNet-18 SSD 结构的目标识别效果 </li>
+    <li> 调参使新模型在 VOC2007 验证数据集上 mAP 达到 <strong><em>66.2%</em></strong>，<a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">YOLO V2(76.8%)</a>, <a href="https://github.com/weiliu89/caffe/tree/ssd" target="_blank" rel="noopener">SSD(77.2%)</a> </li>
+    <li> 为提升并优化 Xeon®E5-2699 v4 上性能，C与<a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/" target="_blank" rel="noopener"> Intel Intrinsics</a>重写模型Forward 部分 </li>
+    </ul>
+
+<h3><a href="#" class="myitem"> </a><strong>腾讯提供的BLSTM 网络优化</strong><code>2017.4 ~ 2017.10</code></h3>
+<ul>
+    <li>测试float32 转化int16, int8精度损失</li>
+    <li>转换权重为int16且归一化, C与<a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/" target="_blank" rel="noopener"> Intel Intrinsics</a>重写模型中的矩阵计算</li>
+</ul>   
+
+<h3><a href="#" class="myitem"> </a><strong>肺部异常图片分类, Huiying Project</strong><code>2016.10 ~ 2017.4</code></h3>
+<ul>
+    <li> 对Huiying医疗公司提供X-Ray 肺部<a href="https://www.dicomstandard.org/" target="_blank" rel="noopener">dicom</a> 格式影像进行数据清洗和筛选建立标准肺部数据集 </li> 
+    <li> 创建训练测试lmdb数据集，并在Caffe框架下训练ResNet-12, ResNet-15, ResNet-18, ResNet-23并修改Loss函数，调整参数 </li>
+    <li> 最终模型测试集精度 AUC 为 <strong>0.88</strong></li>
+</ul>  
+
+
+<h3><a href="#" class="myitem"> </a><strong>多节点Theano框架并行计算</strong><code>2016.6 ~ 2017.1</code></h3>
+<ul>
+    <li> 组里负责提升 Theano 在Intel CPU 特别是 Intel®Xeon® &  Intel®Xeon Phi™上的<a href="https://github.com/Theano/Theano/issues/5580" target="_blank" rel="noopener">加速性能</a>，支持开源 <a href="https://github.com/intel/theano/" target="_blank" rel="noopener">Intel Theano</a> </li>
+    <li> 个人负责大batch size的模型训练和多节点Theano并行计算的实现 </li>
+    <li> 提出多节点 AlexNet 网络并行模型，C &amp; MPI编程实现在八节点Xeon®E5-2699 v4 达到约 7X 加速 </li>
+    <li> 调参大batch size(1024) AlexNet 模型， 在相同top1&amp;top5 精度大幅减少训练时间</li>
+</ul>  
+   
+<!--Co-advised by <a href="https://www.cs.cmu.edu/~./aldrich/">Jonathan Aldrich
+ 2012.10~2013.6        基于简易实频法的压电换能器宽带匹配网络设计（本科毕业设计） 
+解决了压电换能器宽带网络匹配的MATLAB计算模型建立及优化问题，完成MATLAB实现SRFT算法；  
+ 2013.11~2015.2        十二五国家“863”计划重点项目深水高精度地震勘探系统成套化研制 
+利用FPGA(CycloneⅤ)基于SERDES技术完成低功耗传输板与光电收发接口板的原理图和PCB设计，
+主要功能分别是用于水下拖缆传输和多通道拖缆部分与光纤控制（FCI板）的接口；电路板调试以及
+现场实测通过，已由中海油服进行验收。
+硬件电路调试完成后，修改FPGA的Verilog HDL代码，升级拖缆传输协议，修改8B/10B编解码
+部分代码，将水下地震采集板传输的数据按照固定数据格式组帧，由前级向后级传输板逐级上传。逻
+辑仿真以及现场测试通过，收发正常，逻辑代码已由中海油服进行验收。 
+ 2015.4~2015.8       大庆侨中科技电梯项目（电梯安全监控装置） 
+基于STM32F407完成整个电梯状态安全监控系统的软硬件设计，实现网络视频会议，在电梯现场
+环境实测正常，目前已安装并稳定运行20余天。本人主要工作是ARM2440广告机开发，STM32F407
+实现传感器状态采集及逻辑判断，网络对话（VOIP）及部分PC端测试程序代码的编写。
+(1)在STM32平台成功移植LWIP网络协议；
+(2)编写bootloader实现系统的网络远程升级(IAP)；
+(3)基于SPEEX音频压缩编解码算法实现了网络通话（VOIP），数据压缩比32:1；
+(4)成功配置并采集传感器的状态，完成RS485收发的编写。 
+ 2015.9~至今       科大反场箍缩（KTX）主动控制装置设计（毕业课题）
+由科大完全自行研制集成的等离子体国际先进反场箍缩实验装置，主要工作是：16路信号放
+大与ADC采集,负反馈PID抑制控制，系统算法矩阵的FPGA实现，千兆网传输与RS485传输
+设计，目前处于原理图设计阶段。
+
+
+
+
+</a>--> 
+
+<h3 id="intel"><strong>核探测与核电子学国家重点实验室</strong>  <code>2013.9 ~ 2016.6</code></h3>
+<p>USTC, Hefei <br></p>
+<h3><a href="#" class="myitem"> </a>  <strong><a href="https://www.iter.org/" target="_blank" rel="noopener">ITER</a>, 科大反场箍缩（KTX）主动控制装置原型设计（硕士论文）</strong> <code> 2015.10 ~ 2016.6</code></h3>
+    <ul>
+    <li> 提出负反馈PID系统控制<a href="http://ktx.ustc.edu.cn" target="_blank" rel="noopener">KTX</a> 装置接缝处误差场 </li>
+    <li> 设计二级模拟放大及高速ADC &amp; DAC 电路，单板Cyclone V FPGA 集成 DDR2, RS-485, USB2.0, 千兆网设计 </li>
+    <li> 为减少控制延迟，FPGA 片内实现反馈控制矩阵计算</li>
+    </ul>
+
+<h3><a href="#" class="myitem"> </a>  <strong>基于物联网的电梯安全系统设计</strong> <code>2015.4 ~ 2015.10</code></h3>
+    <ul>
+    <li> 实现ARM2440 交叉编译移植广告机应用</li>
+    <li> 在STM32F407 单片机移植 <a href="http://savannah.nongnu.org/projects/lwip/" target="_blank" rel="noopener">LwIP</a> 网络协议，修改Bootloader实现远程网络升级IAP. </li>
+    <li> 远程实时救援通话实现，修改并移植<a href="https://www.speex.org/" target="_blank" rel="noopener">Speex</a>算法适配单片机，大幅减少通话带宽，数据压缩比为 32:1</li>
+    </ul>
+
+<h3><a href="#" class="myitem"> </a>  <strong>十二五国家“863”计划重点项目深水高精度地震勘探系统成套化研制</strong> <code>2013.11 ~ 2015.4</code></h3>
+    <ul>
+    <li> 设计拖缆系统中SerDes 数据传输板 &amp; Fiber光电板原理图以及PCB 布线 </li>
+    <li> 实现修改 FPGA(Cyclone V) 中SerDes 技术的Verilog HDL 逻辑代码 </li>
+    <li> 完成8B/10B 编码的Verilog HDL 及光电板传输逻辑代码，系统通过中海油服验收</li>
+    </ul>
+
+<h2 id="experience">技能</h2>
+<h3 id="intel"><strong>软件</strong></h3>
+<h3><a href="#" class="myitem"> </a>C, PYTHON</h3>
+<h3 id="intel"><strong>硬件</strong></h3>
+<h3><a href="#" class="myitem"> </a>Cadence&amp;Quartus II, Verilog HDL</h3>
+<h3><a href="#" class="myitem"> </a>单板焊接: BGA, QFN, SMD, QFP</h3>
+
+<h2 id="skill">英语</h2>
+<h3 id="intel"><strong>GRE</strong></h3>
+<h3><a href="#" class="myitem"> </a>Verbal: 155    Quantitative: 168    Analytical: 3.0</h3>
+<h3 id="intel"><strong>TOEFL</strong></h3>
+<h3><a href="#" class="myitem"> </a>Total: 100</h3>
+<h3><a href="#" class="myitem"> </a>Reading: 29    Listening: 24    Speaking: 22    Writing: 25</h3>
+      
+<h2 id="teaching">助教</h2>
+<p>
+<a href="#" class="myitem"></a>FPGA 编程实验 <code class="highlighter-rouge">2015.3 ~ 2015.6</code> <br>
+<a href="#" class="myitem"></a>大规模可编程逻辑器件原理与应用 <code class="highlighter-rouge">2015.3 ~ 2015.6</code> <br>
+<a href="#" class="myitem"></a>信号采集处理<code class="highlighter-rouge">2014.9 ~ 2015.2</code> <br>
+<a href="#" class="myitem"></a>热力学与统计物理  <code class="highlighter-rouge">2014.3 ~ 2014.6</code> <br>
+<a href="#" class="myitem"></a>电子学基础  <code class="highlighter-rouge">2013.9 ~ 2014.1</code> <br>
+</p>
+
+<h2 id="honors--awards">荣誉 &amp; 奖学金</h2>
+<p>
+  <a href="#" class="myitem"></a>校优秀硕士毕业生 <code class="highlighter-rouge">2016.6</code> <br>
+<a href="#" class="myitem"></a>校优秀毕业生 <code class="highlighter-rouge">2013.6</code> <br>
+<a href="#" class="myitem"></a>优秀学生奖（铜奖） <code class="highlighter-rouge">2012.10</code> <br>
+<a href="#" class="myitem"></a>唐仲英奖学金 <code class="highlighter-rouge">2010.4 ~ 2013.4</code> <br>
+<a href="#" class="myitem"></a>USTC海外新生校友奖 <code class="highlighter-rouge">2009.10</code> <br>
+</p>
+<h2 id="publications">文章 &amp; 专利</h2>
+<p><a href="#" class="myitem"></a>Guo Xiaotian, Song Kezhu, Gao Linlin. Implementation of real-time talking system on elevators based on LWIP[J]. Microcomputer &amp; ITS applications(2016.3) </p>
+<p><a href="#" class="myitem"></a>Guo Xiaotian, Yu kun, et al. "Detecting objects in video frames using similarity detectors", Patent No. AA6365-PCT, filed on Sep.7 2018. 
+</p>
+<!--
+<h3 id="pubs"><a href="https://2017.splashcon.org/event/dsldi-2017-substance-and-style-domain-specific-languages-for-mathematical-diagrams"><strong>Substance and Style: domain-specific languages for mathematical diagrams</strong></a></h3>
+<p><strong>Wode Ni*</strong>, Katherine Ye*, Joshua Sunshine, Jonathan Aldrich, and Keenan Crane.<br />  <em>Domain-Specific Language Design and Implementation (DSLDI 2017),  co-located with SPLASH.</em> <br />
+[<a href="assets/dsldi.pdf">PDF</a>]
+[<a href="assets/dsldi-presentation.pdf">slides</a>]
+[<a href="http://penrose.ink">www</a>]
+[<a href="https://github.com/penrose/penrose">repo</a>]</p>
+--> 
+ 
+<!-- ### Footer
+
+Last updated: May 2013 -->
+
+    </div>
+    </div>
+</body>
+</html>
+
+
+<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0.5%;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+p{
+    margin: 0.5%;
+  padding: 0;
+  border: 0;
+  font-size: 90%;
+  font: inherit;
+  vertical-align: baseline;
+}
+#cv {
+  
+  max-width: 800px;
+/*   width: 90%;background: #f3f3f3;*/
+  margin: 4% auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.itembefore {
+    content: "-";
+    position: relative;
+    left: -0.5em;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* end of reset */
+
+body {
+  font: normal normal 400;
+  font-size: 100%;
+  line-height: 1.5em;
+  /*also written as...  font: normal normal 400 100%/1.5em;*/
+  font-family: "Helvetica",sans-serif;
+  margin: 0.5in 0.5in 0.5in 0.5in
+  /* margin-top: 1em;
+  margin-left: 1em; */
+  -webkit-font-smoothing: antialiased;
+}
+
+strong {
+  font-weight: bold;
+}
+
+p strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+
+h1 {
+  font-family: "Avenir Next",sans-serif;
+  text-align: center;
+  /* font-size: 50pt; */
+  font-size: 120%;
+  font-weight: lighter;
+  position: relative;
+  line-height: 1.2em;
+  position: relative;
+  /* left: 28%; */
+}
+
+h1 strong {
+  font-weight: normal !important;
+  line-height: 1em;
+}
+
+/* Section headers */
+h2 {
+  font-family: "Avenir Next",sans-serif;
+  /* font-size: 20pt; */
+  font-size: 150%;
+  text-align: center;
+  font-weight: normal;
+  display: flex;
+  /* line-height: 1.5em; */
+  margin-top: 0.7em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+h2:after {
+  border-bottom: 1.7px dashed #D3D3D3;
+  /* height: 0.8em; */
+  -webkit-font-smoothing: antialiased;
+  margin-left: 10px;
+  content: '';
+  flex: 1
+}
+
+h3 strong {
+  /* line-height: 2.5em; */
+  -webkit-font-smoothing: antialiased;
+}
+
+h3 {
+  -webkit-font-smoothing: antialiased;
+  font-size: 100%;
+  margin-top: 0.5em;
+}
+
+
+code {
+  font-family: "Palatino";
+  font-style: italic; 
+  /* float: right; position:absolute;*/
+  float: right;
+  right: 2%;
+  margin-bottom: -0.5em;
+  font-size: 85%;
+}
+
+
+li:before {
+  content: "-";
+  position: relative;
+  left: -0.5em;
+}
+
+li {
+  /*second line indent*/
+  padding-left: 2.25em;
+  text-indent: -0.25em;
+  /*color: #777;*/
+}
+
+#webaddress {
+  text-align: center;
+  position: relative;
+  font-weight: lighter;
+  color: #ccc;
+  /* font-family: Menlo,monospace,sans-serif; */
+  font-size: 80%;
+}
+
+#webaddress a {
+  text-decoration: none;
+}
+
+
+
+
+.myemail {
+  -moz-box-shadow:inset 0px 0px 0px 2px #9fb4f2;
+  -webkit-box-shadow:inset 0px 0px 0px 2px #9fb4f2;
+  box-shadow:inset 0px 0px 0px 2px #9fb4f2;
+  background-color:#7892c2;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size: 90%;
+  font-family: Times New Roman;
+  padding:0.8px 9px;
+  text-decoration:none;
+  text-shadow:0px 0px 0px #283966;
+}
+.myemail:hover {
+  background-color:#476e9e;
+}
+.myemail:active {
+  position:relative;
+  top:1px;
+}
+
+
+
+.myitem {
+  -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  background-color:transparent;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:4px;
+  border:1px solid #84bbf3;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size: 90%;
+  font-weight:bold;
+  padding:3px 3px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #528ecc;
+}
+.myitem:hover {
+  background-color:transparent;
+}
+.myitem:active {
+  position:relative;
+  top:1px;
+}
+
+
+
+</style>

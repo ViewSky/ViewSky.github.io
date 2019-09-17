@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Curriculum Vitae</title>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+ <![endif]-->
+</head>
+<body>
+  <div id="cv">
+    <div id="content">   
+<h1 id="sky">
+<i href="#" class="myemail">homepage</i>
+<a href="https://viewsky.github.io" style="margin-right:0.5em" target="_blank" rel="noopener">viewsky.github.io</a>
+
+<i href="#" class="myemail">email</i>
+<a href="gxtzhuxi@gmail.com" style="margin-right:0.5em">skymustworkhard@gmail.com</a>
+
+<i href="#" class="myemail">ver</i>
+<a href="#" style="margin-right:-0.1em">EN</a>
+<a href="./cvcn.html">中</a>
+
+</h1>
+<h2 id="education"></h2>
+
+<h1 id="sky"><strong>Guo, Xiaotian -- Curriculum Vitae </strong></h1>
+<h2 id="education">Education</h2>
+
+<h3 id="Master"><strong>University of Science and Technology of China</strong> <code>Sep.2013 ~ Jun.2016</code></h3>
+<ul>
+  <li>MA.Sc in Electronics Engineering</li>
+</ul>
+
+<h3 id="bachelor"><strong>University of Science and Technology of China</strong> <code>Sep.2009 ~ Jun.2013</code></h3>
+<ul>
+  <li>B.S. in Applid Physics, <em>Physics Electronics</em></li>
+  <li>Special Class of the Gifted Young</li>
+</ul>
+
+
+<h2 id="experience">Experience</h2>
+<h3 id="intel"><strong>Intel Corporation, Zizhu site in Shanghai  </strong>  <code>Jun.2016 ~ Apr.2018</code></h3>
+<p>Software Engineer in Deep Learning <br></p>
+<h3><a href="#" class="myitem"></a><strong>ResNet-18 SSD fast implementation, City Brain Project</strong> <code>Apr.2017 ~ Apr.2018</code></h3>
+    <ul>
+    <li> As Intel CPU has its high throughput advantage to handle object detection tasks with supporting of enough memory, the new SSD（Single Shot MultiBox Detector) model based on ResNet-18 was proposed and implemented. </li>
+    <li>To maximum the CPU performance of new model, I <em>modified</em> the original ResNet-18 to fully-reduced network with 1X1 convolution layers. </li>
+    <li><em>Retrained</em> it and <em>accelerated</em> the training process with <a href="https://software.intel.com/en-us/mkl" target="_blank" rel="noopener">Intel®MKL</a> on <a href="https://ark.intel.com/en/products/91317/Intel-Xeon-Processor-E5-2699-v4-55M-Cache-2_20-GHz" target="_blank" rel="noopener">Xeon®E5-2699 v4</a> to outperform the original accuracy based on <a href="www.image-net.org">Image1K</a> dataset.</li>
+    <li><em>Replaced</em> the VGG-16 in original SSD with the fully-reduced ResNet-18 in different methods. For the purpose of improving detection accuracy, I tried several ResNet-18 SSD models and <em>finetuned</em> models with special skills. The final mAP achieved <strong><em>66.2%</em></strong> on VOC2007 validation dataset compared to <a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">YOLO V2(76.8%)</a>, <a href="https://github.com/weiliu89/caffe/tree/ssd" target="_blank" rel="noopener">SSD(77.2%)</a>.</li>
+    <li>To improve the performance on Xeon®E5-2699 v4, We rewrote forward operations of the new ResNet-18 SSD model with the<a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/" target="_blank" rel="noopener"> Intel Intrinsics.</a> </li>
+    </ul>
+
+<h3><a href="#" class="myitem"> </a><strong>BLSTM Optimization, cooperated with Tencent</strong><code>Apr.2017 ~ Oct.2017</code></h3>
+<ul>
+    <li>We rewrote all matrix operations with Intel Intrinsics in the unique BLSTM model supplied by Tencent as Tencent had high latency of speech recognition in the game system. To achieve better performance, we converted float32 to int16 and narrowed down the loss of final accuracy with generalization.</li>
+</ul>   
+
+<h3><a href="#" class="myitem"> </a><strong>Lung abnormal classification, Huiying Project</strong><code>Oct.2016 ~ Apr.2017</code></h3>
+<ul>
+    <li>Huiying corporation had collected many origin medical images of lung X-Ray from hospitals in China. The size of whole primary dataset was 100TB and the format of original images was <a href="https://www.dicomstandard.org/" target="_blank" rel="noopener">dicom</a>. </li> 
+    <li>Wrote several scripts to convert the dicom format into jpeg and cleaned wrong images in the medical dataset. Labeled all lung images and made two lmdb datasets in order to train and validate models. </li>
+    <li>Finetuned ResNet-12, ResNet-15, ResNet-18 and ResNet-23 with pretrained models based on Image1K and improved the AUC of test dataset to <strong>0.88</strong>.</li>
+</ul>  
+
+
+<h3><a href="#" class="myitem"> </a><strong>Multinode implementation on theano</strong><code>Jun.2016 ~ Jan.2017</code></h3>
+<ul>
+    <li>We mainly contributed to improve theano performance on CPU, especially in Intel®Xeon® and  Intel®Xeon Phi™.<a href="https://github.com/intel/theano/" target="_blank" rel="noopener">Intel Theano</a> was supported by our group and had exordinary <a href="https://github.com/Theano/Theano/issues/5580" target="_blank" rel="noopener">speed up</a> compared to original version.</li>
+    <li>Personally, I focused on big batch training and multinode implementation on theano. Proposed multinode computing model of AlexNet which could accelerate about 7X(8 nodes) on Xeon®E5-2699 v4. All operations required by mutltinode computing were extended with C code and the waiting time of communication and synchronization was overlapped by map-reduce tricks of MPI. </li>
+    <li>Tuned big batch size(1024) of AlexNet, as big batch is required to get better efficiency of multinode acceleration. The new hyper-parameters could outperform the same top1&amp;top5 accuracy and greatly shorten time to train.</li>
+</ul>  
+   
+<!--Co-advised by <a href="https://www.cs.cmu.edu/~./aldrich/">Jonathan Aldrich</a>--> 
+
+<h3 id="intel"><strong>State Key Laboratory of Particle Detection and Electronics</strong>  <code>Sep.2013 ~ Jun.2016</code></h3>
+<p>USTC, Hefei <br></p>
+<h3><a href="#" class="myitem"> </a>  <strong><a href="https://www.iter.org/" target="_blank" rel="noopener">ITER</a> project, KTX in USTC</strong> <code>Oct. 2015 ~ Jun. 2016</code></h3>
+    <ul>
+    <li>Proposed a new feedback design of the active control system which can reduce error field of vertical gap in <a href="http://ktx.ustc.edu.cn" target="_blank" rel="noopener">KTX</a>. </li>
+    <li>Designed 16 Rogowski coils, two-stage amplifiers, high-speed ADCs, Cyclone V FPGA, DDR2, RS-485, USB2.0, 100M Ethernet. </li>
+    <li>Implemented the feeback formula to realize real-time field control with lower latency in FPGA than computer.</li>
+    <li>The prototype board has been accomplished and can be stably and reliably used in the KTX system.</li>
+    </ul>
+
+<h3><a href="#" class="myitem"> </a>  <strong>Elevator Monitoring System Project based on IoT</strong> <code>Apr. 2015 ~ Oct. 2015</code></h3>
+    <ul>
+    <li>Built cross-compiler environment  and transplanted the Linux operating system on the ARM2440 platform to implement the advertising system in the elevator.</li>
+    <li>Transplanted <a href="http://savannah.nongnu.org/projects/lwip/" target="_blank" rel="noopener">LwIP</a> network protocol on the STM32F407 platform and designed the distributed monitoring system based on IoT. </li>
+    <li>Wrote bootloader code to realize remote upgrade of the system through ethernet.</li>
+    <li>Realized network real-time talking and transplanted the <a href="https://www.speex.org/" target="_blank" rel="noopener">Speex</a> codecs algorithm on the STM32 platform to reduce bandwidth consumption, and the data compression ratio was 32:1.</li>
+    </ul>
+
+<h3><a href="#" class="myitem"> </a>  <strong>Design of Marine Seismic High Precision Exploration Long-cable System, 863 Project</strong> <code>Nov. 2013 ~ Apr. 2015</code></h3>
+    <ul>
+    <li>Completed the SCHEMATIC&amp;PCB design of  SerDes Board and Optical Fiber Board in the long-cable system.</li>
+    <li>Applied the SerDes technology in FPGA(Cyclone V) to achieve multichannel data transmission. </li>
+    <li>Wrote Verilog HDL to update the cable transmission protocol and tested bit error rate as to solve the problem of long-distance high-speed data transmission of long-cable, ensured the synchronization and DC balance(8B/10B encoding).</li>
+    <li>Tested Agilent HFBR transceivers(full duplex) in the Fiber Board to transfer data between SerDes PCB and upper system.</li>
+    </ul>
+
+<h2 id="experience">Skills</h2>
+<h3 id="intel"><strong>Software</strong></h3>
+<h3><a href="#" class="myitem"> </a>C, PYTHON</h3>
+<h3 id="intel"><strong>Hardware</strong></h3>
+<h3><a href="#" class="myitem"> </a>Cadence&amp;Quartus II, Verilog HDL</h3>
+<h3><a href="#" class="myitem"> </a>Welding available: BGA, QFN, SMD, QFP</h3>
+
+<h2 id="skill">English Proficiency</h2>
+<h3 id="intel"><strong>GRE</strong></h3>
+<h3><a href="#" class="myitem"> </a>Verbal: 155    Quantitative: 168    Analytical: 3.0</h3>
+<h3 id="intel"><strong>TOEFL</strong></h3>
+<h3><a href="#" class="myitem"> </a>Total: 100</h3>
+<h3><a href="#" class="myitem"> </a>Reading: 29    Listening: 24    Speaking: 22    Writing: 25</h3>
+      
+<h2 id="teaching">Tutor Assistant</h2>
+<p>
+<a href="#" class="myitem"></a>FPGA Program and Simulation Experiments <code class="highlighter-rouge">Mar. 2015 ~ Jun.2015</code> <br>
+<a href="#" class="myitem"></a>CPLD Theory and Application <code class="highlighter-rouge">Mar. 2015 ~ Jun.2015</code> <br>
+<a href="#" class="myitem"></a>Signal Sampling and Processing in Physics Experiments  <code class="highlighter-rouge">Sep. 2014 ~ Feb.2015</code> <br>
+<a href="#" class="myitem"></a>Thermodynamics and Statistical Mechanics  <code class="highlighter-rouge">Mar. 2014 ~ Jun.2014</code> <br>
+<a href="#" class="myitem"></a>Electronic Technology Basis  <code class="highlighter-rouge">Sep. 2013 ~ Jan.2014</code> <br>
+</p>
+
+<h2 id="honors--awards">Honors &amp; Awards</h2>
+<p>
+  <a href="#" class="myitem"></a>Outstanding Graduate of USTC <code class="highlighter-rouge">Jun.2016</code> <br>
+<a href="#" class="myitem"></a>Outstanding Graduate of USTC <code class="highlighter-rouge">Jun.2013</code> <br>
+<a href="#" class="myitem"></a>Outstanding Student Scholarship (Grade3) <code class="highlighter-rouge">Oct.2012</code> <br>
+<a href="#" class="myitem"></a>Tang Foundation Scholarship <code class="highlighter-rouge">Apr.2010 ~ Apr.2013</code> <br>
+<a href="#" class="myitem"></a>USTC Overseas Alumni  Foundation Outstanding Student Scholarship <code class="highlighter-rouge">Oct.2009</code> <br>
+</p>
+<h2 id="publications">Publications &amp; Patents</h2>
+<p><a href="#" class="myitem"></a>Guo Xiaotian, Song Kezhu, Gao Linlin. Implementation of real-time talking system on elevators based on LWIP[J]. Microcomputer &amp; ITS applications(2016.3) </p>
+<p><a href="#" class="myitem"></a>Guo Xiaotian, Yu kun, et al. "Detecting objects in video frames using similarity detectors", Patent No. AA6365-PCT, filed on Sep.7 2018. 
+</p>
+<!--
+<h3 id="pubs"><a href="https://2017.splashcon.org/event/dsldi-2017-substance-and-style-domain-specific-languages-for-mathematical-diagrams"><strong>Substance and Style: domain-specific languages for mathematical diagrams</strong></a></h3>
+<p><strong>Wode Ni*</strong>, Katherine Ye*, Joshua Sunshine, Jonathan Aldrich, and Keenan Crane.<br />  <em>Domain-Specific Language Design and Implementation (DSLDI 2017),  co-located with SPLASH.</em> <br />
+[<a href="assets/dsldi.pdf">PDF</a>]
+[<a href="assets/dsldi-presentation.pdf">slides</a>]
+[<a href="http://penrose.ink">www</a>]
+[<a href="https://github.com/penrose/penrose">repo</a>]</p>
+--> 
+ 
+<!-- ### Footer
+
+Last updated: May 2013 -->
+
+    </div>
+    </div>
+</body>
+</html>
+
+
+<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0.5%;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+p{
+    margin: 0.5%;
+  padding: 0;
+  border: 0;
+  font-size: 90%;
+  font: inherit;
+  vertical-align: baseline;
+}
+#cv {
+  
+  max-width: 800px;
+/*   width: 90%;background: #f3f3f3;*/
+  margin: 4% auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.itembefore {
+    content: "-";
+    position: relative;
+    left: -0.5em;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* end of reset */
+
+body {
+  font: normal normal 400;
+  font-size: 100%;
+  line-height: 1.5em;
+  /*also written as...  font: normal normal 400 100%/1.5em;*/
+  font-family: "Helvetica",sans-serif;
+  margin: 0.5in 0.5in 0.5in 0.5in
+  /* margin-top: 1em;
+  margin-left: 1em; */
+  -webkit-font-smoothing: antialiased;
+}
+
+strong {
+  font-weight: bold;
+}
+
+p strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+
+h1 {
+  font-family: "Avenir Next",sans-serif;
+  text-align: center;
+  /* font-size: 50pt; */
+  font-size: 120%;
+  font-weight: lighter;
+  position: relative;
+  line-height: 1.2em;
+  position: relative;
+  /* left: 28%; */
+}
+
+h1 strong {
+  font-weight: normal !important;
+  line-height: 1em;
+}
+
+/* Section headers */
+h2 {
+  font-family: "Avenir Next",sans-serif;
+  /* font-size: 20pt; */
+  font-size: 150%;
+  text-align: center;
+  font-weight: normal;
+  display: flex;
+  /* line-height: 1.5em; */
+  margin-top: 0.7em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+h2:after {
+  border-bottom: 1.7px dashed #D3D3D3;
+  /* height: 0.8em; */
+  -webkit-font-smoothing: antialiased;
+  margin-left: 10px;
+  content: '';
+  flex: 1
+}
+
+h3 strong {
+  /* line-height: 2.5em; */
+  -webkit-font-smoothing: antialiased;
+}
+
+h3 {
+  -webkit-font-smoothing: antialiased;
+  font-size: 100%;
+  margin-top: 0.5em;
+}
+
+
+code {
+  font-family: "Palatino";
+  font-style: italic; 
+  /* float: right; position:absolute;*/
+  float: right;
+  right: 2%;
+  margin-bottom: -0.5em;
+  font-size: 85%;
+}
+
+
+li:before {
+  content: "-";
+  position: relative;
+  left: -0.5em;
+}
+
+li {
+  /*second line indent*/
+  padding-left: 2.25em;
+  text-indent: -0.25em;
+  /*color: #777;*/
+}
+
+#webaddress {
+  text-align: center;
+  position: relative;
+  font-weight: lighter;
+  color: #ccc;
+  /* font-family: Menlo,monospace,sans-serif; */
+  font-size: 80%;
+}
+
+#webaddress a {
+  text-decoration: none;
+}
+
+
+
+
+.myemail {
+  -moz-box-shadow:inset 0px 0px 0px 2px #9fb4f2;
+  -webkit-box-shadow:inset 0px 0px 0px 2px #9fb4f2;
+  box-shadow:inset 0px 0px 0px 2px #9fb4f2;
+  background-color:#7892c2;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size: 90%;
+  font-family: Times New Roman;
+  padding:0.8px 9px;
+  text-decoration:none;
+  text-shadow:0px 0px 0px #283966;
+}
+.myemail:hover {
+  background-color:#476e9e;
+}
+.myemail:active {
+  position:relative;
+  top:1px;
+}
+
+
+
+.myitem {
+  -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  background-color:transparent;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:4px;
+  border:1px solid #84bbf3;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size: 90%;
+  font-weight:bold;
+  padding:3px 3px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #528ecc;
+}
+.myitem:hover {
+  background-color:transparent;
+}
+.myitem:active {
+  position:relative;
+  top:1px;
+}
+
+
+
+</style>
