@@ -42,35 +42,45 @@
 
 
 <h2 id="experience">Experience</h2>
-<h3 id="intel"><strong>Intel Corporation, Zizhu site in Shanghai  </strong>  <code>Jun.2016 ~ Apr.2018</code></h3>
-<p>Software Engineer in Deep Learning <br></p>
-<h3><a href="#" class="myitem"></a><strong>ResNet-18 SSD fast implementation, City Brain Project</strong> <code>Apr.2017 ~ Apr.2018</code></h3>
+<h3 id="intel"><strong>Qidianyun Corporation, Hangzhou  </strong>  <code>July.2019 ~ Present</code></h3>
+<p>Software Engineer<br></p>
+<h3><a href="#" class="myitem"></a><strong>Smart market implementation</strong> <code>July.2019 ~ Present</code></h3>
     <ul>
-    <li> As Intel CPU has its high throughput advantage to handle object detection tasks with supporting of enough memory, the new SSD（Single Shot MultiBox Detector) model based on ResNet-18 was proposed and implemented. </li>
-    <li>To maximum the CPU performance of new model, I <em>modified</em> the original ResNet-18 to fully-reduced network with 1X1 convolution layers. </li>
-    <li><em>Retrained</em> it and <em>accelerated</em> the training process with <a href="https://software.intel.com/en-us/mkl" target="_blank" rel="noopener">Intel®MKL</a> on <a href="https://ark.intel.com/en/products/91317/Intel-Xeon-Processor-E5-2699-v4-55M-Cache-2_20-GHz" target="_blank" rel="noopener">Xeon®E5-2699 v4</a> to outperform the original accuracy based on <a href="www.image-net.org">Image1K</a> dataset.</li>
-    <li><em>Replaced</em> the VGG-16 in original SSD with the fully-reduced ResNet-18 in different methods. For the purpose of improving detection accuracy, I tried several ResNet-18 SSD models and <em>finetuned</em> models with special skills. The final mAP achieved <strong><em>66.2%</em></strong> on VOC2007 validation dataset compared to <a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">YOLO V2(76.8%)</a>, <a href="https://github.com/weiliu89/caffe/tree/ssd" target="_blank" rel="noopener">SSD(77.2%)</a>.</li>
-    <li>To improve the performance on Xeon®E5-2699 v4, We rewrote forward operations of the new ResNet-18 SSD model with the<a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/" target="_blank" rel="noopener"> Intel Intrinsics.</a> </li>
+    <li>To detect different commodities, <em>trained</em> FCOS, HRNet, SSD, mmdetection  in lots of situations <em>and achieved</em> 99.91% accuracy.</li>
+    <li>Transplanted MobileNet-V2, SSD into RK3399 platform(aarch64) based on <a href="https://github.com/Tencent/ncnn">NCNN</a> to classify commodities and embedded several assembly functions into dynamic libraries. </li>
+  <li><em>Trained</em> RetinaFace to enhance face-ID performance. To deploy the new model on embedded devices, we used winograd convolution operations, implemented model compression and distillation.</a> </li>
+  <li><em>Test</em> performance of SSD with <a href="https://bytemaster.github.com/mace">MACE</a> library, try to support CPU affinity by diving into MACE library (ongoing). </a> </li>
+    </ul>
+
+
+<h3 id="intel"><strong>Intel Corporation, Zizhu site in Shanghai  </strong>  <code>Jun.2016 ~ May.2018</code></h3>
+<p>Software Engineer in Deep Learning <br></p>
+<h3><a href="#" class="myitem"></a><strong>ResNet-18 SSD fast implementation, City Brain Project</strong> <code>Apr.2017 ~ May.2018</code></h3>
+    <ul>
+    <li>As Intel CPU has its high throughput advantage to deploy neural networks with supporting of enough memory, the new SSD（Single Shot MultiBox Detector) model based on ResNet-18 was proposed and implemented. </li>
+    <li><em>Replaced</em>fully-reduced layers with 1X1 convolution layers and <em>retrained</em> it to outperform the original accuracy based on <a href="www.image-net.org">Image1K</a> dataset. Designed</em> several ResNet-18 SSD models and finetuned models with special skills.</li>
+  <li><em>Analyzed</em> and visualized extracted features of different residual blocks, and the merging of res2a &amp; res3b improved detection accuracy largely. The final mAP achieved<strong><em>66.2%</em></strong>on VOC2007 validation dataset compared to <a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">YOLO V2(76.8%)</a>, <a href="https://github.com/weiliu89/caffe/tree/ssd" target="_blank" rel="noopener">SSD(77.2%)</a>.</li>
+    <li>To improve the inference performance on Intel CPU(Xeon®E5-2699 v4),<strong><em>rewrote</em></strong>forward operations of the new ResNet-18 SSD model with the<a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/" target="_blank" rel="noopener"> Intel Intrinsics.</a> </li>
     </ul>
 
 <h3><a href="#" class="myitem"> </a><strong>BLSTM Optimization, cooperated with Tencent</strong><code>Apr.2017 ~ Oct.2017</code></h3>
 <ul>
-    <li>We rewrote all matrix operations with Intel Intrinsics in the unique BLSTM model supplied by Tencent as Tencent had high latency of speech recognition in the game system. To achieve better performance, we converted float32 to int16 and narrowed down the loss of final accuracy with generalization.</li>
+    <li>To reduce latency of speech recognition in the game system, rewrote all matrix operations with Intel Intrinsics in the unique BLSTM model supplied by Tencent.</li>
+    <li>Optimized operations from float32 to int16  and narrowed down the loss of final accuracy with generalization. </li>
 </ul>   
 
 <h3><a href="#" class="myitem"> </a><strong>Lung abnormal classification, Huiying Project</strong><code>Oct.2016 ~ Apr.2017</code></h3>
 <ul>
-    <li>Huiying corporation had collected many origin medical images of lung X-Ray from hospitals in China. The size of whole primary dataset was 100TB and the format of original images was <a href="https://www.dicomstandard.org/" target="_blank" rel="noopener">dicom</a>. </li> 
-    <li>Wrote several scripts to convert the dicom format into jpeg and cleaned wrong images in the medical dataset. Labeled all lung images and made two lmdb datasets in order to train and validate models. </li>
-    <li>Finetuned ResNet-12, ResNet-15, ResNet-18 and ResNet-23 with pretrained models based on Image1K and improved the AUC of test dataset to <strong>0.88</strong>.</li>
+    <li>Converted the dicom format into jpeg, cleaned wrong X-Ray images in the lung dataset collected by Huiying corporation in China. Labeled all lung images and made two lmdb datasets in order to train and validate models. 
+    <li><em>Accelerated</em> the training process with <a href="https://software.intel.com/en-us/mkl" target="_blank" rel="noopener">Intel®MKL</a> on <a href="https://ark.intel.com/en/products/91317/Intel-Xeon-Processor-E5-2699-v4-55M-Cache-2_20-GHz" target="_blank" rel="noopener">Xeon®E5-2699 v4</a> and finetuned ResNet-12, ResNet-15, ResNet-18 and ResNet-23 with pretrained models based on Image1K. The final AUC of test dataset achieved <strong>0.88</strong>.</li>
 </ul>  
 
 
 <h3><a href="#" class="myitem"> </a><strong>Multinode implementation on theano</strong><code>Jun.2016 ~ Jan.2017</code></h3>
 <ul>
     <li>We mainly contributed to improve theano performance on CPU, especially in Intel®Xeon® and  Intel®Xeon Phi™.<a href="https://github.com/intel/theano/" target="_blank" rel="noopener">Intel Theano</a> was supported by our group and had exordinary <a href="https://github.com/Theano/Theano/issues/5580" target="_blank" rel="noopener">speed up</a> compared to original version.</li>
-    <li>Personally, I focused on big batch training and multinode implementation on theano. Proposed multinode computing model of AlexNet which could accelerate about 7X(8 nodes) on Xeon®E5-2699 v4. All operations required by mutltinode computing were extended with C code and the waiting time of communication and synchronization was overlapped by map-reduce tricks of MPI. </li>
-    <li>Tuned big batch size(1024) of AlexNet, as big batch is required to get better efficiency of multinode acceleration. The new hyper-parameters could outperform the same top1&amp;top5 accuracy and greatly shorten time to train.</li>
+    <li>Personally, I focused on big batch training and multinode implementation on theano. Proposed multinode computing model of AlexNet based on <em>model parallism</em>, which could accelerate about 7X(8 nodes) on Xeon®E5-2699 v4. All operations required by mutltinode computing were extended with C code and the waiting time of communication and synchronization was overlapped by map-reduce tricks of MPI. </li>
+    <li>To get better efficiency of multinode acceleration, rebuilt the cluster with <a href="http://xcat.org//" target="_blank" rel="noopener">xCAT</a>. Tuned big batch size(1024) of AlexNet and sarched new hyper-parameters. Achieved the same top1&amp;top5 accuracy and greatly shorten time to train.</li>
 </ul>  
    
 <!--Co-advised by <a href="https://www.cs.cmu.edu/~./aldrich/">Jonathan Aldrich</a>--> 
@@ -93,8 +103,9 @@
     <li>Realized network real-time talking and transplanted the <a href="https://www.speex.org/" target="_blank" rel="noopener">Speex</a> codecs algorithm on the STM32 platform to reduce bandwidth consumption, and the data compression ratio was 32:1.</li>
     </ul>
 
-<h3><a href="#" class="myitem"> </a>  <strong>Design of Marine Seismic High Precision Exploration Long-cable System, 863 Project</strong> <code>Nov. 2013 ~ Apr. 2015</code></h3>
+<h3><a href="#" class="myitem"> </a>  <strong>Design of Marine Seismic High Precision Exploration System, 863 Project</strong> <code>Nov. 2013 ~ Apr. 2015</code></h3>
     <ul>
+
     <li>Completed the SCHEMATIC&amp;PCB design of  SerDes Board and Optical Fiber Board in the long-cable system.</li>
     <li>Applied the SerDes technology in FPGA(Cyclone V) to achieve multichannel data transmission. </li>
     <li>Wrote Verilog HDL to update the cable transmission protocol and tested bit error rate as to solve the problem of long-distance high-speed data transmission of long-cable, ensured the synchronization and DC balance(8B/10B encoding).</li>
