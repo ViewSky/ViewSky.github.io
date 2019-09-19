@@ -79,7 +79,7 @@
 <h3><a href="#" class="myitem"> </a><strong>Multinode implementation on theano</strong><code>Jun.2016 ~ Jan.2017</code></h3>
 <ul>
     <li>We mainly contributed to improve theano performance on CPU, especially in Intel®Xeon® and  Intel®Xeon Phi™.<a href="https://github.com/intel/theano/" target="_blank" rel="noopener">Intel Theano</a> was supported by our group and had exordinary <a href="https://github.com/Theano/Theano/issues/5580" target="_blank" rel="noopener">speed up</a> compared to original version.</li>
-    <li>Personally, I focused on big batch training and multinode implementation on theano. Proposed multinode computing model of AlexNet based on <em>model parallism</em>, which could accelerate about 7X(8 nodes) on Xeon®E5-2699 v4. All operations required by mutltinode computing were extended with C code and the waiting time of communication and synchronization was overlapped by map-reduce tricks of MPI. </li>
+    <li>Personally, I focused on big batch training and multinode implementation on theano. Proposed multinode computing model of AlexNet based on <em>model parallelism</em>, which could accelerate about 7X(8 nodes) on Xeon®E5-2699 v4. All operations required by mutltinode computing were extended with C code and the waiting time of communication and synchronization was overlapped by map-reduce tricks of MPI. </li>
     <li>To get better efficiency of multinode acceleration, rebuilt the cluster with <a href="http://xcat.org//" target="_blank" rel="noopener">xCAT</a>. Tuned big batch size(1024) of AlexNet and sarched new hyper-parameters. Achieved the same top1&amp;top5 accuracy and greatly shorten time to train.</li>
 </ul>  
    
